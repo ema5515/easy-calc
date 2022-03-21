@@ -27,47 +27,48 @@
 <body>
     <h1 class="title">Easy-Calc</h1>
 
-    <div class="row">
+    <div class="row selector-section">
         <div class="col-md-3 col-6 ">
-            <button type="button" class="btn btn-outline-primary button-selector">MQ -> MTL</button>
+            <button type="button" class="btn btn-outline-primary button-selector b1">MQ -> MTL</button>
         </div>
         <div class="col-md-3 col-6">
-            <button type="button" class="btn btn-outline-primary button-selector">MTL -> MQ</button>
+            <button type="button" class="btn btn-outline-primary button-selector b2">MTL -> MQ</button>
         </div>
         <div class="col-md-3 col-6">
-            <button type="button" class="btn btn-outline-primary button-selector">Prezzo(MTL) a Prezzo(MQ)</button>
+            <button type="button" class="btn btn-outline-primary button-selector b3">Prezzo(MQ) a Prezzo(MTL)</button>
         </div>
         <div class="col-md-3 col-6">
-            <button type="button" class="btn btn-outline-primary button-selector">Prezzo(MTL) a Prezzo(MQ)</button>
+            <button type="button" class="btn btn-outline-primary button-selector b4">Prezzo(MTL) a Prezzo(MQ)</button>
         </div>
         <div class="col-md-3 col-6">
-            <button type="button" class="btn btn-outline-primary button-selector">UM Alternativa MTL</button>
+            <button type="button" class="btn btn-outline-primary button-selector b5">UM Alternativa MTL</button>
         </div>
         <div class="col-md-3 col-6">
-            <button type="button" class="btn btn-outline-primary button-selector">UM Alternativa MQ</button>
+            <button type="button" class="btn btn-outline-primary button-selector b6">UM Alternativa MQ</button>
         </div>
         <div class="col-md-3 col-6">
-            <button type="button" class="btn btn-outline-primary button-selector">MQ Pannello</button>
+            <button type="button" class="btn btn-outline-primary button-selector b7">MQ Pannello</button>
         </div>
         <div class="col-md-3 col-6">
-            <button type="button" class="btn btn-outline-primary button-selector">Ricarico/Marginalit&agrave;</button>
+            <button type="button" class="btn btn-outline-primary button-selector b8">Ricarico/Marginalit&agrave;</button>
         </div>
     </div>
 
     <div class="io-section">
-        <div class="home">
+        <div class="row home">
                 Scegli un calcolo dal menu...
         </div>
 
-        <div class="row" id="mq_mtl">
+        <div class="row hide b1">
+            <h2 class="title-tab">MQ -> MTL</h2>
             <h3 class="input-title">Altezza Bobina (mm)</h3>
             <div class="input-group mb-3">
-                <input type="number" class="form-control" aria-label="Altezza Bobina">
+                <input type="number" class="form-control" aria-label="Altezza Bobina" id="a-b1" onkeyup="mq_mtl()">
                 <span class="input-group-text">mm</span>
             </div>
             <h3 class="input-title">Metri quadri bobina (mq)</h3>
             <div class="input-group mb-3">
-                <input type="number" class="form-control" aria-label="Altezza Bobina">
+                <input type="number" class="form-control" aria-label="Altezza Bobina" id="b-b1" onkeyup="mq_mtl()">
                 <span class="input-group-text">mq</span>
             </div>
             <div class="result-box">
@@ -76,15 +77,16 @@
             </div>
         </div>
 
-        <div class="row" id="mtl_mq">
+        <div class="row hide b2">
+            <h2 class="title-tab">MTL -> MQ</h2>
             <h3 class="input-title">Altezza Bobina (mm)</h3>
             <div class="input-group mb-3">
-                <input type="number" class="form-control" aria-label="Altezza Bobina">
+                <input type="number" class="form-control" aria-label="Altezza Bobina" id="a-b2" onkeyup="mtl_mq()">
                 <span class="input-group-text">mm</span>
             </div>
             <h3 class="input-title">Metri lineari bobina (m)</h3>
             <div class="input-group mb-3">
-                <input type="number" class="form-control" aria-label="Altezza Bobina">
+                <input type="number" class="form-control" aria-label="Altezza Bobina" id="b-b2" onkeyup="mtl_mq()">
                 <span class="input-group-text">m</span>
             </div>
             <div class="result-box">
@@ -93,15 +95,34 @@
             </div>
         </div>
 
-        <div class="row" id="pmtl_pmq">
+        <div class="row hide b3">
+            <h2 class="title-tab">Prezzo(MQ) -> Prezzo(MTL)</h2>
             <h3 class="input-title">Altezza Bobina (mm)</h3>
             <div class="input-group mb-3">
-                <input type="number" class="form-control" aria-label="Altezza Bobina">
+                <input type="number" class="form-control" aria-label="Altezza Bobina" id="a-b3" onkeyup="Pmq_Pmtl()">
                 <span class="input-group-text">mm</span>
             </div>
             <h3 class="input-title">Prezzo in MTL (&euro;)</h3>
             <div class="input-group mb-3">
-                <input type="number" class="form-control" aria-label="Altezza Bobina">
+                <input type="number" class="form-control" aria-label="Altezza Bobina" id="b-b3" onkeyup="Pmq_Pmtl()">
+                <span class="input-group-text">&euro;</span>
+            </div>
+            <div class="result-box">
+                <h2 id="result">0.0</h2>
+                <h2> &euro;/MTL</h2>
+            </div>
+        </div>
+
+        <div class="row hide b4">
+            <h2 class="title-tab">Prezzo(MTL) -> Prezzo(MQ)</h2>
+            <h3 class="input-title">Altezza Bobina (mm)</h3>
+            <div class="input-group mb-3">
+                <input type="number" class="form-control" aria-label="Altezza Bobina" id="a-b4" onkeyup="Pmtl_Pmq()">
+                <span class="input-group-text">mm</span>
+            </div>
+            <h3 class="input-title">Prezzo in mq (&euro;)</h3>
+            <div class="input-group mb-3">
+                <input type="number" class="form-control" aria-label="Altezza Bobina" id="b-b4" onkeyup="Pmtl_Pmq()">
                 <span class="input-group-text">&euro;</span>
             </div>
             <div class="result-box">
@@ -110,39 +131,23 @@
             </div>
         </div>
 
-        <div class="row" id="pmq_pmtl">
+        <div class="row hide b5">
+            <h2 class="title-tab">Unità di misura alt: MTL</h2>
             <h3 class="input-title">Altezza Bobina (mm)</h3>
             <div class="input-group mb-3">
-                <input type="number" class="form-control" aria-label="Altezza Bobina">
+                <input type="number" class="form-control" aria-label="Altezza Bobina" id="a-b5" onkeyup="conv_mq_mtl()">
                 <span class="input-group-text">mm</span>
             </div>
-            <h3 class="input-title">Prezzo in mq (&euro;)</h3>
-            <div class="input-group mb-3">
-                <input type="number" class="form-control" aria-label="Altezza Bobina">
-                <span class="input-group-text">&euro</span>
-            </div>
-            <div class="result-box">
-                <h2 id="result">0.0</h2>
-                <h2> &euro;/MTL</h2>
-            </div>
-        </div>
-
-        <div class="row" id="um_mtl">
-            <h3 class="input-title">Altezza Bobina (mm)</h3>
-            <div class="input-group mb-3">
-                <input type="number" class="form-control" aria-label="Altezza Bobina">
-                <span class="input-group-text">mm</span>
-            </div>
-            
             <div class="result-box">
                 <h2 id="result">0.0</h2>
             </div>
         </div>
 
-        <div class="row" id="um_mq">
+        <div class="row hide b6">
+            <h2 class="title-tab">Unità di misura alt: MQ</h2>
             <h3 class="input-title">Altezza Bobina (mm)</h3>
             <div class="input-group mb-3">
-                <input type="number" class="form-control" aria-label="Altezza Bobina">
+                <input type="number" class="form-control" aria-label="Altezza Bobina" id="a-b6" onkeyup="conv_mtl_mq()">
                 <span class="input-group-text">mm</span>
             </div>
            
@@ -151,15 +156,16 @@
             </div>
         </div>
 
-        <div class="row" id="mq_pann">
+        <div class="row hide b7">
+            <h2 class="title-tab">MQ Pannello</h2>
             <h3 class="input-title">Altezza pannello (mm)</h3>
             <div class="input-group mb-3">
-                <input type="number" class="form-control" aria-label="Altezza Bobina">
+                <input type="number" class="form-control" aria-label="Altezza Bobina" id="a-b7" onkeyup="mq_pannello()">
                 <span class="input-group-text">mm</span>
             </div>
             <h3 class="input-title">Larghezza pannello (mm)</h3>
             <div class="input-group mb-3">
-                <input type="number" class="form-control" aria-label="Altezza Bobina">
+                <input type="number" class="form-control" aria-label="Altezza Bobina" id="b-b7" onkeyup="mq_pannello()">
                 <span class="input-group-text">mm</span>
             </div>
             <div class="result-box">
@@ -168,25 +174,26 @@
             </div>
         </div>
 
-        <div class="row" id="ric_mar">
-            <h3 class="input-title">Altezza Bobina (mm)</h3>
+        <div class="row hide b8">
+            <h2 class="title-tab">Ricarico / Marginalit&agrave;</h2>
+            <h3 class="input-title">Prezzo di Acquisto (&euro;)</h3>
             <div class="input-group mb-3">
-                <input type="number" class="form-control" aria-label="Altezza Bobina">
-                <span class="input-group-text">mm</span>
+                <input type="number" class="form-control" aria-label="Altezza Bobina" id="a-b8" onkeyup="ric_mar()">
+                <span class="input-group-text">&euro;</span>
             </div>
-            <h3 class="input-title">Metri quadri bobina (mq)</h3>
+            <h3 class="input-title">Prezzo di vendita (&euro;)</h3>
             <div class="input-group mb-3">
-                <input type="number" class="form-control" aria-label="Altezza Bobina">
-                <span class="input-group-text">mq</span>
+                <input type="number" class="form-control" aria-label="Altezza Bobina" id="b-b8" onkeyup="ric_mar()">
+                <span class="input-group-text">&euro;</span>
             </div>
             <div class="result-box">
                 <h2>Ricarico:&nbsp;</h2>
-                <h2 id="result">0.0</h2>
+                <h2 id="result1">0.0</h2>
                 <h2> %</h2>
             </div>
             <div class="result-box">
                 <h2>Marginalit&agrave;:&nbsp;</h2>
-                <h2 id="result">0.0</h2>
+                <h2 id="result2">0.0</h2>
                 <h2> %</h2>
             </div>
         </div>

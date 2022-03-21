@@ -29,7 +29,7 @@ hr{
     font-weight: 700;
     color: #4462ce;
     font-size: 4rem;
-    margin: 50px 0;
+    margin: 20px 0 40px;
 }
 
 .button-selector{
@@ -42,6 +42,10 @@ hr{
     height: 70px;
 }
 .button-selector:hover{
+    background-color: #f7f7f7;
+    color: #4462ce;
+}
+.button-active{
     background-color: #f7f7f7;
     color: #4462ce;
 }
@@ -64,6 +68,15 @@ hr{
     border-radius: 10px;
 }
 
+.title-tab{
+    color: #4462ce;
+    text-align: center;
+    margin: 0 auto 50px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
 .result-box{
     display: flex;
     float: center;
@@ -84,7 +97,9 @@ hr{
     font-size: 3.5rem;
     text-align: center;
 }
-
+.hide{
+    display: none;
+}
 
 /*=====ID=====*/
 #result{
@@ -93,7 +108,7 @@ hr{
 
 
 #mq_mtl, #mtl_mq, #pmtl_pmq, #pmq_pmtl, #um_mtl, #um_mq, #mq_pann, #ric_mar{
-    display: none;
+   
 }
 
 

@@ -4,13 +4,28 @@
     }
 
     .io-section{
-        width:80%;
+        width:85%;
     }
 }
 
 @media screen and (max-width: 450px){
+    
 
     .io-section{
         width:100%;
+    }
+}
+
+@media print {
+    .selector-section{
+        display:none;
+    }
+
+    .io-section{
+        width:100%;
+    }
+    
+    body{
+        width:90%;
     }
 }
