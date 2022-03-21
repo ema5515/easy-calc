@@ -1,0 +1,39 @@
+/*=====TAG=====*/
+body{
+    width: 80%;
+    align-items: center;
+    margin: 40px auto;
+    background-color: #f7f7f7;
+}
+
+
+/*=====CLASS=====*/
+
+.title{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    color: #4462ce;
+    font-size: 4rem;
+    margin: 30px 0;
+}
+
+.button-selector{
+    width: 100%;
+    margin:  30px 0;
+    border-radius: 25px;
+    background-color: #4462ce;
+    color: #f7f7f7;
+    border-color: #4462ce;
+}
+button-selector:hover{
+    background-color: #f7f7f7;
+    color: #4462ce;
+}
+
+/*=====ID=====*/
+
+
+
+
+
+
