@@ -1,0 +1,16 @@
+@media screen and (max-width: 900px){
+    body{
+        width:90%;
+    }
+
+    .io-section{
+        width:80%;
+    }
+}
+
+@media screen and (max-width: 450px){
+
+    .io-section{
+        width:100%;
+    }
+}
