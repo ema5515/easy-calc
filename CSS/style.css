@@ -4,6 +4,14 @@ body{
     align-items: center;
     margin: 40px auto;
     background-color: #f7f7f7;
+    font-family: 'Prompt', sans-serif;
+}
+
+footer{
+    text-align: center;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 100;
+    margin-top: 100px;
 }
 
 
@@ -14,26 +22,71 @@ body{
     font-weight: 700;
     color: #4462ce;
     font-size: 4rem;
-    margin: 30px 0;
+    margin: 50px 0;
 }
 
 .button-selector{
     width: 100%;
-    margin:  30px 0;
+    margin:  10px 0;
     border-radius: 25px;
     background-color: #4462ce;
     color: #f7f7f7;
     border-color: #4462ce;
+    height: 70px;
 }
-button-selector:hover{
+.button-selector:hover{
     background-color: #f7f7f7;
     color: #4462ce;
 }
 
+.io-section{
+    width: 70%;
+    margin: 60px auto;
+    background-color: #f7f7f7;
+    border-radius: 30px;
+    padding: 50px;
+    box-shadow: 0px 0px 10px #dedede;
+}
+
+.input-group-text{
+    background-color: #4462ce;
+    color: #f5f5f5;
+}
+
+.input-group-text,.form-control{
+    border-radius: 10px;
+}
+
+.result-box{
+    display: flex;
+    float: center;
+    color: #4462ce;
+    margin: auto;
+    width: auto;
+    align-items: center;
+}
+.result-box h2{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+}
+
+.home{
+    color: #4462ce;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    font-size: 3.5rem;
+    text-align: center;
+}
+
+
 /*=====ID=====*/
+#result{
+    font-size: 4rem;
+}
 
 
-
-
+#mq_mtl, #mtl_mq, #pmtl_pmq, #pmq_pmtl, #um_mtl, #um_mq, #mq_pann, #ric_mar{
+    display: none;
+}
 
 
